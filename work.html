@@ -201,6 +201,108 @@
 
       </div>
     </section>
+    <!-- Section: FAQ -->
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+
+        <!-- Centered header -->
+        <div
+          style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-2); margin-bottom: var(--space-8);">
+          <p class="section-subtitle" style="margin: 0;">Before You Ask</p>
+          <h2
+            style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; line-height: 1.1; letter-spacing: -1px; margin: 0;">
+            Common <em>questions.</em></h2>
+          <div style="width: 48px; height: 1px; background: var(--accent-color);"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; opacity: 0.7; max-width: 400px; margin: 0;">A few things
+            clients tend to ask before starting a naming engagement.</p>
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item" style="border-top: 1px solid var(--border-color);">
+            <button class="faq-trigger" aria-expanded="false"
+              style="width: 100%; background: none; border: none; padding: var(--space-4) 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); cursor: pointer; text-align: left;">
+              <span
+                style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--text-color); line-height: 1.3;">How
+                long does a typical naming project take?</span>
+              <span class="faq-icon"
+                style="width: 32px; height: 32px; border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s;"><i
+                  class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-body"
+              style="overflow: hidden; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1);">
+              <div style="padding-bottom: var(--space-4); padding-right: var(--space-8);">
+                <p style="font-size: 0.95rem; line-height: 1.75; opacity: 0.7; margin-bottom: var(--space-2);">Most
+                  brand naming engagements run between four and six weeks from signed brief to final delivery. This
+                  includes the discovery phase, linguistic exploration, concept testing, and presentation of the
+                  shortlisted names with full rationale.</p>
+                <p style="font-size: 0.95rem; line-height: 1.75; opacity: 0.7; margin: 0;">For more complex projects —
+                  sub-brand systems, portfolio naming, or engagements requiring international cultural checks — the
+                  timeline is scoped individually. Rush timelines are available in select cases; <a href="contact.html"
+                    style="color: var(--accent-color); border-bottom: 1px solid rgba(17,94,89,0.3);">reach out to
+                    discuss</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top: 1px solid var(--border-color);">
+            <button class="faq-trigger" aria-expanded="false"
+              style="width: 100%; background: none; border: none; padding: var(--space-4) 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); cursor: pointer; text-align: left;">
+              <span
+                style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--text-color); line-height: 1.3;">How
+                many name candidates will I receive?</span>
+              <span class="faq-icon"
+                style="width: 32px; height: 32px; border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s;"><i
+                  class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-body"
+              style="overflow: hidden; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1);">
+              <div style="padding-bottom: var(--space-4); padding-right: var(--space-8);">
+                <p style="font-size: 0.95rem; line-height: 1.75; opacity: 0.7; margin-bottom: var(--space-2);">Typically
+                  three to four highly vetted name candidates are presented at the final stage — not a long list of
+                  fifty half-baked ideas. Every name that makes the final presentation has survived phonetic testing,
+                  preliminary trademark screening, and semantic association mapping.</p>
+                <p style="font-size: 0.95rem; line-height: 1.75; opacity: 0.7; margin: 0;">The goal is quality over
+                  volume. You should be able to confidently move forward with any name on the shortlist.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll('.faq-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.faq-item');
+          const body = item.querySelector('.faq-body');
+          const icon = item.querySelector('.faq-icon i');
+          const isOpen = item.classList.contains('open');
+
+          document.querySelectorAll('.faq-item.open').forEach(open => {
+            open.classList.remove('open');
+            open.querySelector('.faq-body').style.maxHeight = '0';
+            open.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            open.querySelector('.faq-icon').style.background = '';
+            open.querySelector('.faq-icon').style.borderColor = '';
+            open.querySelector('.faq-icon i').style.transform = '';
+            open.querySelector('.faq-icon i').className = 'ph ph-plus';
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            trigger.setAttribute('aria-expanded', 'true');
+            trigger.querySelector('.faq-icon').style.background = 'var(--accent-color)';
+            trigger.querySelector('.faq-icon').style.borderColor = 'var(--accent-color)';
+            trigger.querySelector('.faq-icon').style.color = '#fff';
+            icon.style.transform = 'rotate(45deg)';
+          }
+        });
+      });
+    </script>
 
     <!-- CTA -->
     <section class="cta-strip">

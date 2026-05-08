@@ -23,6 +23,12 @@
       padding-top: var(--nav-height);
     }
 
+    @media (width: 1024px) {
+      .hero-split {
+        min-height: 700px; /* Reduced from 100vh for 1024 view */
+      }
+    }
+
     .hero-split-left {
       display: flex;
       justify-content: center;
@@ -75,7 +81,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       .hero-split {
         grid-template-columns: 1fr;
       }
@@ -89,6 +95,95 @@
       .hero-split-right {
         text-align: center;
         padding: var(--space-8) var(--space-4);
+      }
+    }
+
+    @media (max-width: 360px) {
+      .cards-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--space-4) !important;
+      }
+
+      .card {
+        width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    }
+
+    /* Brief to Brand Responsive Grids */
+    .brief-brand-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "text img"
+        "cards img";
+      gap: var(--space-8) var(--space-12);
+      align-items: center;
+    }
+
+    .brief-brand-text {
+      grid-area: text;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      align-items: center;
+      text-align: center;
+    }
+
+    .inner-cards-grid {
+      grid-area: cards;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+    }
+
+    .brief-brand-image-wrap {
+      grid-area: img;
+      height: 640px !important; /* Stretched for desktop as requested */
+    }
+
+    @media (max-width: 1023px) {
+      .brief-brand-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "text"
+          "img"
+          "cards";
+        gap: var(--space-8);
+      }
+
+      .brief-brand-image-wrap {
+        height: 400px !important;
+      }
+
+      /* On mobile (360px range), stack cards. On tablet (768px range), side-by-side */
+      .inner-cards-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inner-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Why Names Fail Responsive Grid */
+    .fail-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    @media (max-width: 1023px) {
+      .fail-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -238,6 +333,225 @@
           </div>
         </div>
 
+      </div>
+    </section>
+    <!-- Section: The Naming Desk -->
+    <section style="position: relative; width: 100%; min-height: 560px; overflow: hidden; background: var(--bg-color);">
+      <img src="assets/images/naming-desk.jpg" alt="" aria-hidden="true"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1.0; filter: grayscale(100%); display: block;" />
+      <div
+        style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(var(--bg-color-rgb),0.97) 0%, rgba(var(--bg-color-rgb),0.88) 55%, rgba(var(--bg-color-rgb),0.3) 100%);">
+      </div>
+
+      <div
+        style="position: relative; z-index: 2; max-width: 560px; padding: clamp(48px, 8vw, 80px) clamp(24px, 5vw, 48px);">
+        <p
+          style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 20px; font-family: var(--font-body);">
+          The Naming Desk</p>
+        <h2
+          style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 400; line-height: 1.1; color: var(--text-color); margin-bottom: 24px; letter-spacing: -1px;">
+          Every name<br>begins <em>here.</em></h2>
+        <div style="width: 48px; height: 1px; background: var(--accent-color); margin-bottom: 24px;"></div>
+        <p
+          style="font-size: 1rem; line-height: 1.75; color: rgba(var(--text-color), 0.65); max-width: 420px; margin-bottom: 36px;">
+          Before the strategy decks, the trademark searches, and the client presentations — there is a desk, a blank
+          page, and the weight of language. This is where the real work happens: the slow, deliberate craft of turning a
+          brand's truth into a single, permanent word.</p>
+        <a href="method.html"
+          style="display: inline-flex; align-items: center; gap: 10px; font-size: 0.8rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-color); border-bottom: 1px solid var(--border-color); padding-bottom: 4px; text-decoration: none;">
+          Read the methodology <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+
+      <div style="position: absolute; bottom: 32px; right: clamp(24px, 5vw, 48px); z-index: 3; text-align: right;">
+        <p
+          style="font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--border-color); margin: 0;">
+          Est.</p>
+        <p
+          style="font-family: var(--font-display); font-size: 0.85rem; color: var(--border-color); font-style: italic; margin: 0;">
+          London, 2019</p>
+      </div>
+    </section>
+    <!-- Section: From Brief to Brand -->
+    <section class="section">
+      <div class="container">
+        <div class="brief-brand-grid">
+          <!-- Text -->
+          <div class="brief-brand-text">
+            <p class="section-subtitle" style="text-align: center; margin: 0;">The Process</p>
+            <h2
+              style="font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -1px; margin: 0;">
+              From brief<br>to <em>brand.</em></h2>
+            <div style="width: 48px; height: 1px; background: var(--accent-color); margin-inline: auto;"></div>
+            <p style="font-size: 1rem; line-height: 1.75; opacity: 0.7; margin-inline: auto; max-width: 420px;">Every engagement starts with a
+              single document — the naming brief. What emerges on the other side is deliberate, defensible, and built to
+              last.</p>
+          </div>
+
+          <!-- Cards -->
+          <div class="inner-cards-grid">
+            <!-- Brief Card -->
+            <div
+              style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius); padding: var(--space-4);">
+              <p
+                style="font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-color); margin-bottom: var(--space-3);">
+                The Brief</p>
+              <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+                <div>
+                  <p
+                    style="font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0.6; margin-bottom: 2px;">
+                    Industry</p>
+                  <p style="font-size: 0.8rem; line-height: 1.4; margin: 0;">Next-gen wealth management for
+                    millennials</p>
+                </div>
+                <div>
+                  <p
+                    style="font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0.6; margin-bottom: 2px;">
+                    Tone</p>
+                  <p style="font-size: 0.8rem; line-height: 1.4; margin: 0;">Calm, premium, ambient — not aggressive
+                  </p>
+                </div>
+                <div>
+                  <p
+                    style="font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0.6; margin-bottom: 2px;">
+                    Avoid</p>
+                  <p style="font-size: 0.8rem; line-height: 1.4; margin: 0;">Legacy clichés, hard plosives (X, Z)</p>
+                </div>
+                <div>
+                  <p
+                    style="font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0.6; margin-bottom: 2px;">
+                    Must be</p>
+                  <p style="font-size: 0.8rem; line-height: 1.4; margin: 0;">2 syllables max, globally pronounceable
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result Card -->
+            <div
+              style="background: rgba(17,94,89,0.05); border: 1px solid rgba(17,94,89,0.2); border-radius: var(--radius); padding: var(--space-4); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px;">
+              <p
+                style="font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-color); margin: 0;">
+                The Name</p>
+              <p
+                style="font-family: var(--font-display); font-size: 3rem; color: var(--accent-color); letter-spacing: -2px; line-height: 1; margin: 4px 0;">
+                Aura</p>
+              <p
+                style="font-family: var(--font-display); font-style: italic; font-size: 0.75rem; color: var(--accent-color); opacity: 0.7; line-height: 1.4; margin: 0;">
+                "Financial clarity you can feel."</p>
+              <div style="display: flex; flex-direction: column; gap: 6px; width: 100%; margin-top: 4px;">
+                <span
+                  style="font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 8px; border: 1px solid rgba(17,94,89,0.3); border-radius: 99px; color: var(--accent-color);">Latin
+                  roots</span>
+                <span
+                  style="font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 8px; border: 1px solid rgba(17,94,89,0.3); border-radius: 99px; color: var(--accent-color);">Phonetically
+                  fluid</span>
+                <span
+                  style="font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 8px; border: 1px solid rgba(17,94,89,0.3); border-radius: 99px; color: var(--accent-color);">TM
+                  cleared</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="brief-brand-image-wrap" style="height: 520px; border-radius: var(--radius); overflow: hidden;">
+            <img src="assets/images/brief-to-brand.jpg" alt="Strategic naming process"
+              style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); display: block;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Why Names Fail -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Header -->
+        <div
+          style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); margin-bottom: var(--space-10);">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-2);">
+            <p class="section-subtitle" style="text-align: center; margin: 0;">Common Mistakes</p>
+            <h2
+              style="font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -1px; margin: 0;">
+              Why names <em>fail.</em></h2>
+            <div style="width: 48px; height: 1px; background: var(--accent-color);"></div>
+          </div>
+          <p style="font-size: 1.1rem; line-height: 1.75; opacity: 0.7; max-width: 520px; margin: 0;">Most naming projects
+            collapse before they begin. Not from lack of creativity — but from a lack of linguistic discipline. Here are
+            the four patterns I see most often.</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="fail-grid">
+
+          <!-- 01 -->
+          <div
+            style="background: var(--bg-color); padding: var(--space-8) var(--space-4); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); position: relative;">
+            <span
+              style="font-family: var(--font-display); font-size: 3.5rem; color: var(--border-color); line-height: 1; position: absolute; top: 16px; right: 16px; letter-spacing: -2px;">01</span>
+            <h3
+              style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; line-height: 1.2; max-width: 140px; margin: 0;">
+              Phonetic <em>friction</em></h3>
+            <div style="width: 32px; height: 1px; background: var(--accent-color); margin-inline: auto;"></div>
+            <p style="font-size: 0.875rem; line-height: 1.65; opacity: 0.7; margin: 0;">If a customer can't spell it
+              after hearing it once, you're paying an acquisition tax on every word-of-mouth referral — forever.</p>
+            <span
+              style="font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; gap: 6px;"><i
+                class="ph ph-warning"></i> Highest impact failure</span>
+          </div>
+
+          <!-- 02 -->
+          <div
+            style="background: var(--bg-color); padding: var(--space-8) var(--space-4); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); position: relative;">
+            <span
+              style="font-family: var(--font-display); font-size: 3.5rem; color: var(--border-color); line-height: 1; position: absolute; top: 16px; right: 16px; letter-spacing: -2px;">02</span>
+            <h3
+              style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; line-height: 1.2; max-width: 140px; margin: 0;">
+              Describing, not <em>evoking</em></h3>
+            <div style="width: 32px; height: 1px; background: var(--accent-color); margin-inline: auto;"></div>
+            <p style="font-size: 0.875rem; line-height: 1.65; opacity: 0.7; margin: 0;">Names like "FastPay" or
+              "SmartHealth" describe a feature, not an identity. They date quickly and are nearly impossible to
+              trademark.</p>
+            <span
+              style="font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; gap: 6px;"><i
+                class="ph ph-warning"></i> Most common mistake</span>
+          </div>
+
+          <!-- 03 -->
+          <div
+            style="background: var(--bg-color); padding: var(--space-8) var(--space-4); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); position: relative;">
+            <span
+              style="font-family: var(--font-display); font-size: 3.5rem; color: var(--border-color); line-height: 1; position: absolute; top: 16px; right: 16px; letter-spacing: -2px;">03</span>
+            <h3
+              style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; line-height: 1.2; max-width: 140px; margin: 0;">
+              Naming by <em>committee</em></h3>
+            <div style="width: 32px; height: 1px; background: var(--accent-color); margin-inline: auto;"></div>
+            <p style="font-size: 0.875rem; line-height: 1.65; opacity: 0.7; margin: 0;">When everyone has a vote, the
+              safest name wins. Safe names are forgettable names. Great naming requires a single point of strategic
+              conviction.</p>
+            <span
+              style="font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; gap: 6px;"><i
+                class="ph ph-warning"></i> Process failure</span>
+          </div>
+
+          <!-- 04 -->
+          <div
+            style="background: var(--bg-color); padding: var(--space-8) var(--space-4); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); position: relative;">
+            <span
+              style="font-family: var(--font-display); font-size: 3.5rem; color: var(--border-color); line-height: 1; position: absolute; top: 16px; right: 16px; letter-spacing: -2px;">04</span>
+            <h3
+              style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; line-height: 1.2; max-width: 140px; margin: 0;">
+              Chasing the <em>domain</em></h3>
+            <div style="width: 32px; height: 1px; background: var(--accent-color); margin-inline: auto;"></div>
+            <p style="font-size: 0.875rem; line-height: 1.65; opacity: 0.7; margin: 0;">Letting domain availability
+              dictate the name is like choosing a building's architecture based on the nearest parking space. The name
+              comes first.</p>
+            <span
+              style="font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; gap: 6px;"><i
+                class="ph ph-warning"></i> Strategic failure</span>
+          </div>
+
+        </div>
       </div>
     </section>
     <!-- CTA -->

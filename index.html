@@ -105,7 +105,171 @@
         <div class="hero-image-overlay"></div>
       </div>
     </section>
+    <!-- Section: Marquee -->
+    <div
+      style="overflow: hidden; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
 
+      <style>
+        .mq-row {
+          display: flex;
+          overflow: hidden;
+          padding: 14px 0;
+          border-bottom: 1px solid var(--border-color);
+        }
+
+        .mq-row:last-child {
+          border-bottom: none;
+        }
+
+        .mq-inner {
+          display: flex;
+          white-space: nowrap;
+          will-change: transform;
+        }
+
+        .mq-row-1 .mq-inner {
+          animation: mq-left 28s linear infinite;
+        }
+
+        .mq-row-2 .mq-inner {
+          animation: mq-right 22s linear infinite;
+        }
+
+        @keyframes mq-left {
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes mq-right {
+          from {
+            transform: translateX(-50%);
+          }
+
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        .mq-row:hover .mq-inner {
+          animation-play-state: paused;
+        }
+
+        .mq-item {
+          display: inline-flex;
+          align-items: center;
+          gap: 20px;
+          padding: 0 32px;
+          font-family: var(--font-display);
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: var(--text-color);
+          white-space: nowrap;
+        }
+
+        .mq-item em {
+          font-style: italic;
+          color: var(--accent-color);
+        }
+
+        .mq-dot {
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: var(--accent-color);
+          flex-shrink: 0;
+        }
+
+        .mq-item-sm {
+          display: inline-flex;
+          align-items: center;
+          gap: 20px;
+          padding: 0 28px;
+          font-family: var(--font-body);
+          font-size: 0.65rem;
+          font-weight: 500;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: var(--text-color);
+          opacity: 0.5;
+          white-space: nowrap;
+        }
+
+        .mq-item-sm.ac {
+          color: var(--accent-color);
+          opacity: 1;
+        }
+
+        .mq-dot-sm {
+          display: inline-block;
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: var(--border-color);
+          flex-shrink: 0;
+        }
+      </style>
+
+      <!-- Row 1 -->
+      <div class="mq-row mq-row-1">
+        <div class="mq-inner">
+          <span class="mq-item">Morphology <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Phonetics</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Etymology <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Fluency</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Semantics <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Nomenclature</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Mouthfeel <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Resonance</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Distinctiveness <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Euphony</em> <span class="mq-dot"></span></span>
+          <!-- duplicate for seamless loop -->
+          <span class="mq-item">Morphology <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Phonetics</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Etymology <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Fluency</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Semantics <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Nomenclature</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Mouthfeel <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Resonance</em> <span class="mq-dot"></span></span>
+          <span class="mq-item">Distinctiveness <span class="mq-dot"></span></span>
+          <span class="mq-item"><em>Euphony</em> <span class="mq-dot"></span></span>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="mq-row mq-row-2">
+        <div class="mq-inner">
+          <span class="mq-item-sm ac">Brand Naming <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Phonetic Architecture <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Tagline Strategy <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Linguistic Positioning <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Name Audit <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Trademark Screening <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Root Word Analysis <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Cognitive Fluency <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Semantic Mapping <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Identity Architecture <span class="mq-dot-sm"></span></span>
+          <!-- duplicate -->
+          <span class="mq-item-sm ac">Brand Naming <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Phonetic Architecture <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Tagline Strategy <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Linguistic Positioning <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Name Audit <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Trademark Screening <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Root Word Analysis <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Cognitive Fluency <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm ac">Semantic Mapping <span class="mq-dot-sm"></span></span>
+          <span class="mq-item-sm">Identity Architecture <span class="mq-dot-sm"></span></span>
+        </div>
+      </div>
+
+    </div>
     <!-- Section 2: Positioning -->
     <section class="positioning-statement">
       <div class="container">
