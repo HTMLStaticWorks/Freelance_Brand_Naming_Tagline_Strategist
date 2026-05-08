@@ -1,0 +1,30 @@
+/* rtl.css */
+/* Minimal overrides for RTL support that logical properties couldn't handle natively */
+
+html[dir="rtl"] body {
+  /* General RTL tweaks if needed */
+}
+
+html[dir="rtl"] .nav-links a::after {
+  /* The pseudo element transition handles direction automatically due to inset-inline-start, but just in case */
+}
+
+/* Drawer slides from left in RTL */
+html[dir="rtl"] .mobile-drawer {
+  inset-inline-start: -100%;
+  inset-inline-end: auto;
+  transition: inset-inline-start 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+html[dir="rtl"] .mobile-drawer.active {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+/* Animations */
+html[dir="rtl"] .annotation-1 {
+  inset-inline-start: -20px;
+}
+html[dir="rtl"] .annotation-2 {
+  inset-inline-end: -10px;
+}

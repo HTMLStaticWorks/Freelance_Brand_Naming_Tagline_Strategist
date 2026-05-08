@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Case Study | Namecraft</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    .case-hero {
+      text-align: center;
+      padding-top: calc(var(--nav-height) + var(--space-10));
+      padding-bottom: var(--space-8);
+    }
+
+    .case-title {
+      font-size: clamp(4rem, 10vw, 8rem);
+      margin-bottom: var(--space-4);
+      letter-spacing: -2px;
+    }
+
+    .case-tag {
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .case-content {
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .case-section {
+      margin-bottom: var(--space-10);
+    }
+
+    .case-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-4);
+      text-align: center;
+    }
+
+    .case-section p {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-4);
+    }
+
+    .linguistic-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: var(--space-6);
+      border-radius: var(--radius);
+      margin-bottom: var(--space-6);
+    }
+
+    .linguistic-box h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-color);
+      margin-bottom: var(--space-2);
+    }
+
+    .case-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: var(--space-10);
+    }
+
+    .case-nav {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .case-nav a {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Namecraft</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="work.html" class="active">Work</a>
+          <a href="services.html">Services</a>
+          <a href="method.html">Method</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+            <i class="ph ph-moon"></i>
+          </button>
+          <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL">
+            <i class="ph ph-arrows-left-right"></i>
+          </button>
+          <button id="mobile-menu-btn" class="icon-btn hamburger" aria-label="Menu">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">Namecraft</span>
+      <button id="close-drawer" class="icon-btn" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="drawer-actions">
+      <button id="drawer-theme-toggle" class="drawer-btn">
+        <i class="ph ph-moon"></i> Theme
+      </button>
+      <button id="drawer-rtl-toggle" class="drawer-btn">
+        <i class="ph ph-arrows-left-right"></i> RTL
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <article class="container">
+      <header class="case-hero">
+        <!-- Hero banner image behind the header -->
+        <div
+          style="width: 100%; height: 360px; overflow: hidden; border-radius: var(--radius); margin-bottom: var(--space-8);">
+          <img src="assets/images/ws-aura-hero.jpg" alt="Aura brand hero — atmospheric golden haze"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        </div>
+        <div class="case-tag">Fintech</div>
+        <h1 class="case-title animate-words">Aura</h1>
+        <p style="font-size: 1.5rem; font-family: var(--font-display); font-style: italic;">"Financial clarity you can
+          feel."</p>
+      </header>
+
+      <div class="case-content">
+        <div class="case-section">
+          <h2>The Brief</h2>
+          <p>Aura is a next-generation wealth management platform designed for millennials and Gen Z. They needed a name
+            that felt fundamentally different from legacy banking institutions—something that conveyed lightness,
+            clarity, and an ambient sense of financial well-being, rather than aggressive growth or cold institutional
+            security.</p>
+        </div>
+
+        <div class="linguistic-box">
+          <h3>Linguistic Exploration</h3>
+          <p><strong>Roots Explored:</strong> Latin <em>aurum</em> (gold), Greek <em>aura</em> (breeze, breath).</p>
+          <p><strong>Phonetics:</strong> The name starts and ends with an open 'A' vowel, creating a soft, expansive
+            mouthfeel. The 'R' in the middle provides a subtle structural anchor without adding hard plosives.</p>
+          <p><strong>Associations:</strong> Gold, atmosphere, energy, clarity, intuition.</p>
+        </div>
+
+        <div class="case-section">
+          <h2>The Rationale</h2>
+          <p>The name "Aura" succeeds because it reframes wealth as an atmosphere rather than a metric. It implies an
+            ambient, ever-present sense of security. It subverts the traditional fintech naming tropes of sharp,
+            aggressive consonants (like X or Z) in favor of a fluid, organic sound.</p>
+        </div>
+
+        <div class="case-section">
+          <h2>Tagline Strategy</h2>
+          <p>We developed the tagline "Financial clarity you can feel." This builds on the sensory nature of the word
+            "Aura," moving the conversation away from abstract numbers and toward the emotional reality of financial
+            peace of mind.</p>
+        </div>
+
+        <img src="assets/images/ws-aura-mockup.jpg" alt="Aura brand identity mockup in context" class="case-image" />
+
+        <div class="case-section">
+          <h2>The Outcome</h2>
+          <p>Aura successfully launched their beta to a waitlist of 50,000 users. The brand identity, anchored by the
+            name, was widely praised for its calming, premium aesthetic in a space traditionally characterized by high
+            anxiety.</p>
+        </div>
+
+        <nav class="case-nav">
+          <a href="#"><i class="ph ph-arrow-left"></i> Previous</a>
+          <a href="#">Next <i class="ph ph-arrow-right"></i></a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">Namecraft</h2>
+        <p class="tagline">The Linguistics of Identity.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="method.html">Method</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <a href="services.html">Brand Naming</a>
+        <a href="services.html">Tagline Strategy</a>
+        <a href="services.html">Name Audit</a>
+        <a href="services.html">Linguistic Positioning</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">Substack</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Namecraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

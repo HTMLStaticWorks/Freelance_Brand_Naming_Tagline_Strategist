@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Namecraft</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+    
+    .contact-info {
+      background: var(--card-bg);
+      padding: var(--space-8);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .contact-info h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin-bottom: var(--space-4);
+      line-height: 1.1;
+    }
+    
+    .contact-info p {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-6);
+      opacity: 0.8;
+    }
+    
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: 1.1rem;
+    }
+    
+    .contact-item i {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: var(--space-4);
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--text-color);
+      color: var(--bg-color);
+      border-color: var(--text-color);
+    }
+    
+    .contact-form {
+      background: var(--card-bg);
+      padding: var(--space-8);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+    }
+    
+    .map-section {
+      text-align: center;
+      padding: var(--space-10) 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: var(--space-8);
+    }
+    
+    .map-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-2);
+    }
+    
+    .map-container {
+      margin-top: var(--space-6);
+      width: 100%;
+      height: 450px;
+      background: rgba(0,0,0,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(1) contrast(1.2) opacity(0.8); /* Matches premium aesthetic */
+    }
+    
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        width: 100%;
+      }
+      .contact-info {
+        padding: var(--space-8);
+        text-align: center;
+      }
+      .contact-details, .social-links {
+        justify-content: center;
+      }
+      .contact-item {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-grid {
+        gap: var(--space-4);
+      }
+      .contact-form, .contact-info {
+        padding: var(--space-5) var(--space-4);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Namecraft</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="work.html">Work</a>
+          <a href="services.html">Services</a>
+          <a href="method.html">Method</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+            <i class="ph ph-moon"></i>
+          </button>
+          <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL">
+            <i class="ph ph-arrows-left-right"></i>
+          </button>
+          <button id="mobile-menu-btn" class="icon-btn hamburger" aria-label="Menu">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">Namecraft</span>
+      <button id="close-drawer" class="icon-btn" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="drawer-actions">
+       <button id="drawer-theme-toggle" class="drawer-btn">
+         <i class="ph ph-moon"></i> Theme
+       </button>
+       <button id="drawer-rtl-toggle" class="drawer-btn">
+         <i class="ph ph-arrows-left-right"></i> RTL
+       </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="container" style="padding-top: calc(var(--nav-height) + var(--space-12));">
+      <div class="text-center" style="margin-bottom: var(--space-10);">
+        <h1 class="section-title animate-words">Get in Touch</h1>
+        <p class="section-subtitle">Start a Conversation</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form">
+          <form action="https://formspree.io/f/placeholder" method="POST" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="company">Company / Brand (Optional)</label>
+              <input type="text" id="company" name="company" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="service">Service Interested In *</label>
+              <select id="service" name="service" class="form-control" required>
+                <option value="">Select a service...</option>
+                <option value="brand-naming">Brand Naming</option>
+                <option value="tagline">Tagline Strategy</option>
+                <option value="audit">Name Audit</option>
+                <option value="positioning">Linguistic Positioning</option>
+                <option value="unsure">Not Sure</option>
+              </select>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="brief">Project Brief *</label>
+              <textarea id="brief" name="brief" class="form-control" rows="5" placeholder="Tell me about your naming challenge... (min 20 chars)" required></textarea>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="source">How did you hear about me?</label>
+              <select id="source" name="source" class="form-control">
+                <option value="">Select...</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="twitter">Twitter / X</option>
+                <option value="referral">Referral</option>
+                <option value="search">Search Engine</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h1>Let's discuss your nomenclature.</h1>
+          <p>Ready to build your linguistic foundation?</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="ph ph-envelope"></i>
+              <span>elias@namecraft.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="ph ph-phone"></i>
+              <span>+44 (0) 20 7946 0123</span>
+            </div>
+            <div class="contact-item">
+              <i class="ph ph-clock"></i>
+              <span>Mon — Fri, 09:00 — 18:00 GMT</span>
+            </div>
+            <div class="contact-item">
+              <i class="ph ph-map-pin"></i>
+              <span>London, UK — Global Delivery</span>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter/X"><i class="ph ph-twitter-logo"></i></a>
+            <a href="#" class="social-link" aria-label="Substack"><i class="ph ph-article"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-section">
+        <h2>Our Location</h2>
+        <p style="opacity: 0.8; margin-bottom: 24px;">Based in London, working with clients across the globe.</p>
+        
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.4734000103!2d-0.24168144921176146!3d51.52855824176161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1715152200000!5m2!1sen!2s" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">Namecraft</h2>
+        <p class="tagline">The Linguistics of Identity.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="method.html">Method</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <a href="services.html">Brand Naming</a>
+        <a href="services.html">Tagline Strategy</a>
+        <a href="services.html">Name Audit</a>
+        <a href="services.html">Linguistic Positioning</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">Substack</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Namecraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work | Namecraft</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Namecraft</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="work.html" class="active">Work</a>
+          <a href="services.html">Services</a>
+          <a href="method.html">Method</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+            <i class="ph ph-moon"></i>
+          </button>
+          <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL">
+            <i class="ph ph-arrows-left-right"></i>
+          </button>
+          <button id="mobile-menu-btn" class="icon-btn hamburger" aria-label="Menu">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">Namecraft</span>
+      <button id="close-drawer" class="icon-btn" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="drawer-actions">
+      <button id="drawer-theme-toggle" class="drawer-btn">
+        <i class="ph ph-moon"></i> Theme
+      </button>
+      <button id="drawer-rtl-toggle" class="drawer-btn">
+        <i class="ph ph-arrows-left-right"></i> RTL
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="section container" style="padding-top: calc(var(--nav-height) + var(--space-8));">
+      <h1 class="section-title animate-words">Selected Work</h1>
+      <p class="section-subtitle">Nomenclature Systems</p>
+
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
+        <button class="filter-btn" data-filter="health">Health</button>
+        <button class="filter-btn" data-filter="finance">Finance</button>
+        <button class="filter-btn" data-filter="consumer">Consumer</button>
+        <button class="filter-btn" data-filter="b2b">B2B</button>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="card work-card" data-category="finance tech"
+          style="padding: 0; overflow: hidden; align-items: center; text-align: center;">
+          <div style="width: 100%; height: 220px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/work-aura.jpg" alt="Aura Fintech"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div
+            style="padding: var(--space-6); display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+            <div>
+              <div class="card-tag">Fintech</div>
+              <h3 class="card-title">Aura</h3>
+              <p class="card-desc">"Financial clarity you can feel."<br><br>Rooted in Latin 'aurum' (gold) and
+                atmosphere, signifying both wealth and intangible lightness.</p>
+            </div>
+            <a href="work-single.html" class="card-link">View Case Study</a>
+          </div>
+        </div>
+
+        <div class="card work-card" data-category="health tech"
+          style="padding: 0; overflow: hidden; align-items: center; text-align: center;">
+          <div style="width: 100%; height: 220px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/work-vera.jpg" alt="Vera Healthtech"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div
+            style="padding: var(--space-6); display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+            <div>
+              <div class="card-tag">Healthtech</div>
+              <h3 class="card-title">Vera</h3>
+              <p class="card-desc">"Truth in diagnostics."<br><br>A short, sharp morpheme derived from Latin 'veritas',
+                creating immediate trust and medical authority.</p>
+            </div>
+            <a href="work-single.html" class="card-link">View Case Study</a>
+          </div>
+        </div>
+
+        <div class="card work-card" data-category="b2b tech"
+          style="padding: 0; overflow: hidden; align-items: center; text-align: center;">
+          <div style="width: 100%; height: 220px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/work-lexicon.jpg" alt="Lexicon B2B SaaS"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div
+            style="padding: var(--space-6); display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+            <div>
+              <div class="card-tag">B2B SaaS</div>
+              <h3 class="card-title">Lexicon</h3>
+              <p class="card-desc">"The language of data."<br><br>An authoritative, established noun repositioned for
+                modern data architecture.</p>
+            </div>
+            <a href="work-single.html" class="card-link">View Case Study</a>
+          </div>
+        </div>
+
+        <div class="card work-card" data-category="consumer"
+          style="padding: 0; overflow: hidden; align-items: center; text-align: center;">
+          <div style="width: 100%; height: 220px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/work-lumina.jpg" alt="Lumina Consumer Goods"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div
+            style="padding: var(--space-6); display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+            <div>
+              <div class="card-tag">Consumer Goods</div>
+              <h3 class="card-title">Lumina</h3>
+              <p class="card-desc">"Illuminating the everyday."<br><br>Evokes light and clarity. Designed for a premium
+                home lighting startup.</p>
+            </div>
+            <a href="work-single.html" class="card-link">View Case Study</a>
+          </div>
+        </div>
+
+        <div class="card work-card" data-category="b2b finance"
+          style="padding: 0; overflow: hidden; align-items: center; text-align: center;">
+          <div style="width: 100%; height: 220px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/work-equinox.jpg" alt="Equinox B2B Finance"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div
+            style="padding: var(--space-6); display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+            <div>
+              <div class="card-tag">B2B Finance</div>
+              <h3 class="card-title">Equinox</h3>
+              <p class="card-desc">"Balance in markets."<br><br>Represents perfect equilibrium, targeting institutional
+                investors seeking stability.</p>
+            </div>
+            <a href="work-single.html" class="card-link">View Case Study</a>
+          </div>
+        </div>
+
+        <div class="card work-card" data-category="health consumer"
+          style="padding: 0; overflow: hidden; align-items: center; text-align: center;">
+          <div style="width: 100%; height: 220px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/work-oasis.jpg" alt="Oasis Wellness"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div
+            style="padding: var(--space-6); display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+            <div>
+              <div class="card-tag">Wellness</div>
+              <h3 class="card-title">Oasis</h3>
+              <p class="card-desc">"A refuge for the mind."<br><br>A universally understood metaphor for a sanctuary,
+                applied to a digital mental health platform.</p>
+            </div>
+            <a href="work-single.html" class="card-link">View Case Study</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="container">
+        <h2 style="font-size: 3rem; margin-bottom: 24px; font-family: var(--font-display);">Ready to name your vision?
+        </h2>
+        <a href="contact.html" class="btn">Start a Project</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">Namecraft</h2>
+        <p class="tagline">The Linguistics of Identity.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="method.html">Method</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <a href="services.html">Brand Naming</a>
+        <a href="services.html">Tagline Strategy</a>
+        <a href="services.html">Name Audit</a>
+        <a href="services.html">Linguistic Positioning</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">Substack</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Namecraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/work.js"></script>
+</body>
+
+</html>

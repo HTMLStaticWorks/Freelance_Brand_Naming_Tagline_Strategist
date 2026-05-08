@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Namecraft</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    .service-card {
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-2);
+      text-align: center;
+      width: 100%;
+    }
+    
+    .service-card p {
+      text-align: center;
+      width: 100%;
+      margin-bottom: var(--space-4);
+      color: rgba(var(--text-color), 0.8);
+    }
+    
+    .service-includes {
+      width: 100%;
+      border-top: 1px solid var(--border-color);
+      padding-top: var(--space-4);
+      margin-top: auto;
+    }
+    
+    .service-includes h4 {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-color);
+      margin-bottom: var(--space-2);
+    }
+    
+    .service-includes ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    
+    .service-includes li {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    
+    .service-price {
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-top: var(--space-6);
+      padding-top: var(--space-4);
+      border-top: 1px dashed var(--border-color);
+    }
+    
+    .pricing-table {
+      margin-top: var(--space-12);
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+    
+    .tier-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: var(--space-8) var(--space-6);
+      border-radius: var(--radius);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+    
+    .tier-card .btn {
+      margin-top: auto;
+    }
+    
+    .tier-card.featured {
+      border-color: var(--accent-color);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-color);
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: var(--radius);
+    }
+    
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Namecraft</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="work.html">Work</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="method.html">Method</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+            <i class="ph ph-moon"></i>
+          </button>
+          <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL">
+            <i class="ph ph-arrows-left-right"></i>
+          </button>
+          <button id="mobile-menu-btn" class="icon-btn hamburger" aria-label="Menu">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">Namecraft</span>
+      <button id="close-drawer" class="icon-btn" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="work.html">Work</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="method.html">Method</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="drawer-actions">
+       <button id="drawer-theme-toggle" class="drawer-btn">
+         <i class="ph ph-moon"></i> Theme
+       </button>
+       <button id="drawer-rtl-toggle" class="drawer-btn">
+         <i class="ph ph-arrows-left-right"></i> RTL
+       </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="section container" style="padding-top: calc(var(--nav-height) + var(--space-8));">
+      <h1 class="section-title animate-words">Practice Areas</h1>
+      <p class="section-subtitle">Strategic Capabilities</p>
+      
+      <div class="cards-grid services-list-grid" style="margin-bottom: var(--space-12);">
+        <div class="card service-card">
+          <h3>Brand Naming</h3>
+          <p>Architecting new names for companies, products, and sub-brands that cut through market noise and establish immediate authority.</p>
+          <div class="service-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li><i class="ph ph-check text-accent"></i> Competitive nomenclature audit</li>
+              <li><i class="ph ph-check text-accent"></i> Core linguistic strategy</li>
+              <li><i class="ph ph-check text-accent"></i> 3-4 highly vetted name candidates</li>
+              <li><i class="ph ph-check text-accent"></i> Preliminary trademark screening</li>
+            </ul>
+          </div>
+          <div class="service-price">Starting at $5k</div>
+        </div>
+        
+        <div class="card service-card">
+          <h3>Tagline Strategy</h3>
+          <p>Developing positioning statements and taglines that encapsulate brand truth in a few perfectly chosen words.</p>
+          <div class="service-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li><i class="ph ph-check text-accent"></i> Messaging hierarchy framework</li>
+              <li><i class="ph ph-check text-accent"></i> Tone of voice definition</li>
+              <li><i class="ph ph-check text-accent"></i> 5+ strategic tagline options</li>
+              <li><i class="ph ph-check text-accent"></i> Usage guidelines and variations</li>
+            </ul>
+          </div>
+          <div class="service-price">Starting at $3k</div>
+        </div>
+        
+        <div class="card service-card">
+          <h3>Name Audit</h3>
+          <p>A rigorous, objective evaluation of your existing name candidates for clarity, distinctiveness, and linguistic risk across global markets.</p>
+          <div class="service-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li><i class="ph ph-check text-accent"></i> Linguistic disaster check</li>
+              <li><i class="ph ph-check text-accent"></i> Phonetic friction analysis</li>
+              <li><i class="ph ph-check text-accent"></i> Semantic association mapping</li>
+              <li><i class="ph ph-check text-accent"></i> Comprehensive scorecard</li>
+            </ul>
+          </div>
+          <div class="service-price">Starting at $1.5k</div>
+        </div>
+        
+        <div class="card service-card">
+          <h3>Linguistic Positioning</h3>
+          <p>Building the entire vocabulary architecture for a brand, ensuring consistency across all touchpoints and communications.</p>
+          <div class="service-includes">
+            <h4>What's Included</h4>
+            <ul>
+              <li><i class="ph ph-check text-accent"></i> Brand lexicon and glossary</li>
+              <li><i class="ph ph-check text-accent"></i> "Words we use / Words we don't"</li>
+              <li><i class="ph ph-check text-accent"></i> Personality and tone guidelines</li>
+              <li><i class="ph ph-check text-accent"></i> Foundational copy blocks</li>
+            </ul>
+          </div>
+          <div class="service-price">Custom Scope</div>
+        </div>
+      </div>
+      
+      <div class="pricing-table">
+        <h2 class="section-title">Engagement Tiers</h2>
+        <p class="section-subtitle">Structured for Growth</p>
+        
+        <div class="pricing-grid">
+          <div class="tier-card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Starter</h3>
+            <p style="font-size: 0.9rem; color: var(--accent-color); margin-bottom: 24px;">For early-stage startups</p>
+            <div style="font-size: 2.5rem; font-family: var(--font-display); margin-bottom: 24px;">$5k</div>
+            <ul style="text-align: left; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem;">
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Brand Naming (1 asset)</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> 2 Rounds of revisions</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Exact-match domain search</li>
+              <li><i class="ph ph-x" style="opacity: 0.3; margin-right: 8px;"></i> Tagline strategy</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;">Inquire</a>
+          </div>
+          
+          <div class="tier-card featured">
+            <div class="tier-badge">Most Popular</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Studio</h3>
+            <p style="font-size: 0.9rem; color: var(--accent-color); margin-bottom: 24px;">For funded companies</p>
+            <div style="font-size: 2.5rem; font-family: var(--font-display); margin-bottom: 24px;">$8.5k</div>
+            <ul style="text-align: left; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem;">
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Core Brand Naming</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> 3 Rounds of revisions</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Tagline Strategy</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Prelim TM screening</li>
+            </ul>
+            <a href="contact.html" class="btn" style="width: 100%;">Inquire</a>
+          </div>
+          
+          <div class="tier-card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Enterprise</h3>
+            <p style="font-size: 0.9rem; color: var(--accent-color); margin-bottom: 24px;">For complex portfolios</p>
+            <div style="font-size: 2.5rem; font-family: var(--font-display); margin-bottom: 24px;">Custom</div>
+            <ul style="text-align: left; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem;">
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Brand & Sub-brand Naming</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Linguistic Positioning</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Global cultural checks</li>
+              <li><i class="ph ph-check" style="color: var(--accent-color); margin-right: 8px;"></i> Executive workshops</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip" style="margin-top: var(--space-8);">
+      <div class="container">
+        <h2 style="font-size: 2rem; margin-bottom: 16px; font-family: var(--font-display);">Not sure which service fits?</h2>
+        <a href="contact.html" class="btn">Let's talk</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">Namecraft</h2>
+        <p class="tagline">The Linguistics of Identity.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="method.html">Method</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <a href="services.html">Brand Naming</a>
+        <a href="services.html">Tagline Strategy</a>
+        <a href="services.html">Name Audit</a>
+        <a href="services.html">Linguistic Positioning</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">Substack</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Namecraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method | Namecraft</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    .method-hero {
+      text-align: center;
+      padding-top: calc(var(--nav-height) + var(--space-10));
+      padding-bottom: var(--space-8);
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .method-hero h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      margin-bottom: var(--space-4);
+    }
+
+    .method-hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .philosophy-section {
+      background: var(--text-color);
+      color: var(--bg-color);
+      padding: var(--space-12) 0;
+      margin-bottom: var(--space-12);
+    }
+
+    .philosophy-content {
+      max-width: 800px;
+      margin-inline: auto;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .philosophy-content p {
+      margin-bottom: var(--space-4);
+    }
+
+    .full-method-steps {
+      max-width: 800px;
+      margin-inline: auto;
+      margin-bottom: var(--space-12);
+    }
+
+    .full-step {
+      display: flex;
+      gap: var(--space-6);
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .full-step:last-child {
+      border-bottom: none;
+    }
+
+    .full-step-icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .full-step-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .full-step-content p {
+      margin-bottom: var(--space-2);
+      opacity: 0.9;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+    }
+
+    .tool-card {
+      text-align: center;
+      padding: var(--space-6);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+    }
+
+    .tool-card i {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: var(--space-4);
+    }
+
+    .checklist {
+      max-width: 600px;
+      margin-inline: auto;
+      background: var(--card-bg);
+      padding: var(--space-8);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+    }
+
+    .checklist h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-4);
+      text-align: center;
+    }
+
+    .checklist ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: 1.1rem;
+    }
+
+    .checklist li i {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .full-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Namecraft</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="work.html">Work</a>
+          <a href="services.html">Services</a>
+          <a href="method.html" class="active">Method</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+            <i class="ph ph-moon"></i>
+          </button>
+          <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL">
+            <i class="ph ph-arrows-left-right"></i>
+          </button>
+          <button id="mobile-menu-btn" class="icon-btn hamburger" aria-label="Menu">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">Namecraft</span>
+      <button id="close-drawer" class="icon-btn" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="method.html" class="active">Method</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="drawer-actions">
+      <button id="drawer-theme-toggle" class="drawer-btn">
+        <i class="ph ph-moon"></i> Theme
+      </button>
+      <button id="drawer-rtl-toggle" class="drawer-btn">
+        <i class="ph ph-arrows-left-right"></i> RTL
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="container method-hero">
+      <h1 class="animate-words">The Architecture of Meaning</h1>
+      <p>Naming is not a creative exercise in brainstorming. It is a rigorous process of strategic reduction, linguistic
+        engineering, and market positioning.</p>
+    </section>
+
+    <section class="philosophy-section">
+      <div class="container philosophy-content">
+        <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 24px;">Philosophy</h2>
+        <p>A brand name is the single piece of language that your company will use most frequently. It is the vessel
+          into which all brand equity will eventually be poured.</p>
+        <p>Because of this, we cannot rely on subjectivity or "gut feelings" when choosing a name. We must evaluate
+          names based on their structural integrity: phonetics, semantics, morphology, and memorability.</p>
+        <p>I build names that are designed to do a specific job, in a specific market, for a specific audience.</p>
+      </div>
+    </section>
+    <section class="container">
+      <h2 class="section-title">Tools of the Trade</h2>
+      <div class="tools-grid">
+
+        <div class="tool-card" style="padding: 0; overflow: hidden; text-align: center;">
+          <div style="width: 100%; height: 180px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/tool-etymology.jpg" alt="Etymology Databases"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div style="padding: var(--space-6);">
+            <i class="ph ph-book-open"></i>
+            <h3>Etymology Databases</h3>
+            <p>Deep research into the historical roots and evolution of words to find hidden layers of meaning.</p>
+          </div>
+        </div>
+
+        <div class="tool-card" style="padding: 0; overflow: hidden; text-align: center;">
+          <div style="width: 100%; height: 180px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/tool-phonetic.jpg" alt="Phonetic Testing"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div style="padding: var(--space-6);">
+            <i class="ph ph-waveform"></i>
+            <h3>Phonetic Testing</h3>
+            <p>Analyzing the mouthfeel and sound symbolism of syllables (e.g., bouba/kiki effect).</p>
+          </div>
+        </div>
+
+        <div class="tool-card" style="padding: 0; overflow: hidden; text-align: center;">
+          <div style="width: 100%; height: 180px; overflow: hidden; flex-shrink: 0;">
+            <img src="assets/images/tool-trademark.jpg" alt="Trademark Screening"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div style="padding: var(--space-6);">
+            <i class="ph ph-scales"></i>
+            <h3>Trademark Screening</h3>
+            <p>Preliminary knockout searches to ensure viability before involving legal counsel.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section class="container">
+      <h2 class="section-title">The Process</h2>
+      <p class="section-subtitle">A Structured Approach</p>
+
+      <div class="full-method-steps">
+        <div class="full-step">
+          <div class="full-step-icon"><i class="ph ph-compass"></i></div>
+          <div class="full-step-content">
+            <h3>1. Discovery & Diagnosis</h3>
+            <p>We begin by mapping the terrain. This involves deep stakeholder interviews to uncover the brand's true
+              DNA. We define the target audience, analyze competitor nomenclature, and identify whitespace in the
+              market.</p>
+            <p><strong>Output:</strong> The Naming Brief — a strategic document that defines the exact parameters and
+              objectives for the new name.</p>
+          </div>
+        </div>
+
+        <div class="full-step">
+          <div class="full-step-icon"><i class="ph ph-translate"></i></div>
+          <div class="full-step-content">
+            <h3>2. Linguistic Exploration</h3>
+            <p>With the brief approved, I begin the lateral exploration. I deconstruct core concepts into root words
+              across Latin, Greek, and Proto-Indo-European origins. I explore morphemes, metaphors, and phonetic
+              structures that evoke the desired brand traits.</p>
+            <p>Hundreds of raw concepts are generated in this phase before ruthless editing begins.</p>
+          </div>
+        </div>
+
+        <div class="full-step">
+          <div class="full-step-icon"><i class="ph ph-funnel"></i></div>
+          <div class="full-step-content">
+            <h3>3. Concept Testing</h3>
+            <p>The long list is filtered through multiple rigorous screens. We check for basic trademark availability
+              using the USPTO database. We run phonetic friction tests to ensure the name is easy to pronounce globally.
+              We test for negative semantic associations in major languages.</p>
+            <p>Only the top 1% of names survive this gauntlet.</p>
+          </div>
+        </div>
+
+        <div class="full-step">
+          <div class="full-step-icon"><i class="ph ph-package"></i></div>
+          <div class="full-step-content">
+            <h3>4. Delivery & Rationale</h3>
+            <p>The surviving candidates are presented in a comprehensive presentation. Each name is accompanied by a
+              deep linguistic rationale explaining exactly why it works, how it maps back to the brief, and context
+              mockups showing the name living in the real world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container" style="margin-bottom: var(--space-12);">
+      <div class="checklist">
+        <h3>What Makes a Great Name</h3>
+        <ul>
+          <li><i class="ph ph-check-circle"></i> <strong>Distinctive:</strong> It breaks category conventions.</li>
+          <li><i class="ph ph-check-circle"></i> <strong>Evocative:</strong> It hints at meaning without describing
+            literally.</li>
+          <li><i class="ph ph-check-circle"></i> <strong>Euphonic:</strong> It sounds pleasant and is easy to say.</li>
+          <li><i class="ph ph-check-circle"></i> <strong>Brief:</strong> It is economical in its use of letters and
+            syllables.</li>
+          <li><i class="ph ph-check-circle"></i> <strong>Defensible:</strong> It is legally protectable as a trademark.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="container">
+        <h2 style="font-size: 3rem; margin-bottom: 24px; font-family: var(--font-display);">Ready to begin the process?
+        </h2>
+        <a href="contact.html" class="btn">Inquire Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">Namecraft</h2>
+        <p class="tagline">The Linguistics of Identity.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="method.html">Method</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Services</h3>
+        <a href="services.html">Brand Naming</a>
+        <a href="services.html">Tagline Strategy</a>
+        <a href="services.html">Name Audit</a>
+        <a href="services.html">Linguistic Positioning</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">Substack</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Namecraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
