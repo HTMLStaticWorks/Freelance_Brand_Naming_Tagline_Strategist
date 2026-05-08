@@ -1,0 +1,11 @@
+<svg width="210" height="44" viewBox="0 0 210 44" xmlns="http://www.w3.org/2000/svg">
+  <title>Namecraft</title>
+  <rect fill="#2dd4bf" x="0" y="0" width="5" height="44" rx="1"/>
+  <rect fill="#2dd4bf" x="24" y="0" width="5" height="44" rx="1"/>
+  <polygon fill="#2dd4bf" points="5,0 18,0 24,25 11,25"/>
+  <polygon fill="#2dd4bf" points="11,27 18,27 16,35 14,35"/>
+  <polygon fill="#2dd4bf" points="18,27 24,27 21,35 16,35"/>
+  <polygon fill="#2dd4bf" points="14,35 16,35 15,44 14,44"/>
+  <polygon fill="#2dd4bf" points="16,35 21,35 17,44 15,44"/>
+  <text fill="#2dd4bf" x="34" y="22" font-size="36" font-weight="400" font-family="'Cormorant Garamond', Georgia, serif" letter-spacing="-0.5" dominant-baseline="middle">Namecraft</text>
+</svg>

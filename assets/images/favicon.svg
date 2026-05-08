@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <title>Namecraft</title>
+  <rect fill="#2dd4bf" x="0" y="0" width="5" height="32" rx="1"/>
+  <rect fill="#2dd4bf" x="21" y="0" width="5" height="32" rx="1"/>
+  <polygon fill="#2dd4bf" points="5,0 16,0 21,18 10,18"/>
+  <polygon fill="#2dd4bf" points="10,20 16,20 14,26 12,26"/>
+  <polygon fill="#2dd4bf" points="16,20 21,20 19,26 14,26"/>
+  <polygon fill="#2dd4bf" points="12,26 14,26 13,32 12,32"/>
+  <polygon fill="#2dd4bf" points="14,26 19,26 15,32 13,32"/>
+</svg>

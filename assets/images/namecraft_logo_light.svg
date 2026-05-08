@@ -1,0 +1,22 @@
+<svg width="460" height="100" viewBox="0 0 460 100" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Namecraft</title>
+  <desc>Namecraft wordmark with N quill monogram icon — light mode</desc>
+
+  <rect fill="#1a1a1a" x="0" y="0" width="10" height="90" rx="1"/>
+  <rect fill="#1a1a1a" x="44" y="0" width="10" height="90" rx="1"/>
+  <polygon fill="#1a1a1a" points="10,0 33,0 44,50 21,50"/>
+  <polygon fill="#1a1a1a" points="21,53 33,53 29,72 25,72"/>
+  <polygon fill="#1a1a1a" points="33,53 44,53 39,72 29,72"/>
+  <polygon fill="#1a1a1a" points="25,72 29,72 27,90 26,90"/>
+  <polygon fill="#1a1a1a" points="29,72 39,72 30,90 27,90"/>
+  <text
+    fill="#1a1a1a"
+    x="62"
+    y="50"
+    font-size="64"
+    font-weight="400"
+    font-family="'Cormorant Garamond', Georgia, serif"
+    letter-spacing="-0.5"
+    dominant-baseline="middle">Namecraft</text>
+
+</svg>
