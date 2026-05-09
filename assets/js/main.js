@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initHeroAnimations();
   initForms();
+  initBackToTop();
 });
 
 // Theme Toggle
@@ -197,6 +198,30 @@ function initForms() {
           form.querySelectorAll('.success').forEach(el => el.classList.remove('success'));
         }, 3000);
       }
+    });
+  });
+}
+
+// Back to Top
+function initBackToTop() {
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.className = 'back-to-top';
+  backToTopBtn.innerHTML = '<i class="ph ph-arrow-up"></i>';
+  backToTopBtn.setAttribute('aria-label', 'Back to top');
+  document.body.appendChild(backToTopBtn);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 }
