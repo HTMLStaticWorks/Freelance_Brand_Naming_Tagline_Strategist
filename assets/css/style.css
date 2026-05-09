@@ -268,12 +268,13 @@ button {
   height: 100vh;
   background-color: var(--bg-color);
   z-index: 1100;
-  padding: var(--space-4);
+  padding: var(--space-4) var(--space-6) var(--space-10);
   display: flex;
   flex-direction: column;
   transition: inset-inline-end 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   box-shadow: var(--shadow);
   border-inline-start: 1px solid var(--border-color);
+  overflow-y: auto;
 }
 
 .mobile-drawer.active {
@@ -566,8 +567,14 @@ button {
 .card-link {
   font-size: 0.9rem;
   font-weight: 500;
-  border-block-end: 1px solid var(--text-color);
+  color: var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
   padding-block-end: 2px;
+}
+
+.card-link:hover {
+  color: var(--text-color);
+  border-block-end-color: var(--text-color);
 }
 
 /* Methodology */
@@ -812,7 +819,8 @@ button {
   }
 
   .cards-grid>*:last-child:nth-child(3) {
-    width: 100%;
+    grid-column: auto !important;
+    width: 100% !important;
   }
 
   .hero-headline {
@@ -828,6 +836,50 @@ button {
 
   .footer-col {
     align-items: center;
+  }
+
+  .cards-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-4) !important;
+  }
+
+  .card {
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+@media (max-width: 360px), (max-height: 700px) {
+  .mobile-drawer {
+    padding: var(--space-4) var(--space-4) var(--space-6);
+  }
+
+  .drawer-header {
+    margin-block-end: var(--space-2);
+    padding-block-end: var(--space-2);
+  }
+
+  .drawer-links {
+    gap: 4px;
+  }
+
+  .drawer-links a {
+    font-size: 1rem;
+    padding: 6px 0;
+    min-height: 32px;
+  }
+
+  .drawer-actions {
+    padding-block-start: var(--space-2);
+    gap: 4px;
+  }
+
+  .drawer-btn {
+    padding: 6px 0;
+    font-size: 0.85rem;
+    min-height: 32px;
   }
 }
 

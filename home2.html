@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
@@ -53,7 +54,10 @@
       animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       opacity: 0;
       transform: translateX(50px);
-      text-align: left;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .hero-split-right h1 {
@@ -65,6 +69,8 @@
       font-size: 1.2rem;
       margin-bottom: var(--space-6);
       opacity: 0.8;
+      max-width: 480px;
+      margin-inline: auto;
     }
 
     @keyframes slideInLeft {
@@ -98,19 +104,7 @@
       }
     }
 
-    @media (max-width: 360px) {
-      .cards-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: var(--space-4) !important;
-      }
 
-      .card {
-        width: 100% !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-    }
 
     /* Brief to Brand Responsive Grids */
     .brief-brand-grid {
@@ -200,6 +194,7 @@
         </a>
         <div class="nav-links">
           <a href="index.html">Home</a>
+          <a href="about.html">About</a>
           <a href="home2.html" class="active">Home 2</a>
           <a href="work.html">Work</a>
           <a href="services.html">Services</a>
@@ -233,6 +228,7 @@
     </div>
     <div class="drawer-links">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="home2.html" class="active">Home 2</a>
       <a href="work.html">Work</a>
       <a href="services.html">Services</a>
@@ -577,6 +573,7 @@
       <div class="footer-col">
         <h3 class="footer-heading">Navigation</h3>
         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
         <a href="work.html">Work</a>
         <a href="method.html">Method</a>
         <a href="blog.html">Blog</a>
